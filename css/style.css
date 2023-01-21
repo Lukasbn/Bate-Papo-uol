@@ -42,8 +42,11 @@ footer ion-icon {
 }
 .CorpoDaPagina{
     margin-top: 105px;
+    margin-bottom: 85px;
+    width: 100%;
 }
 .mensagem{
+    width: 100%;
     border-radius: 2px;
     min-height: 40px;
     margin-bottom: 4px;
@@ -56,6 +59,15 @@ footer ion-icon {
     line-height: 20px;
     flex-wrap: wrap;
     box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+strong{
+    font-weight: 700;
+}
+span{
+    color: #AAAAAA;
 }
 .login{
     background-color: #DCDCDC;
