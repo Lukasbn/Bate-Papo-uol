@@ -79,25 +79,25 @@ function AtualizaMensagens(objeto){
     for(let i=0; i<objeto.length; i++){
         if(objeto[i].type === 'status'){
             ListaMensagens = ListaMensagens + [`
-            <li class="mensagem login">
+            <li class="mensagem login" data-test="message">
             <span><span class="hora">(${objeto[i].time})</span> <strong>${objeto[i].from}</strong> ${objeto[i].text}</span>
             </li>
             `]
         }else if(objeto[i].type === 'message' && objeto[i].to === 'Todos'){
             ListaMensagens = ListaMensagens + [`
-            <li class="mensagem conversa">
+            <li class="mensagem conversa" data-test="message">
             <span><span class="hora">(${objeto[i].time})</span> <strong>${objeto[i].from}</strong> para <strong>${objeto[i].to}:</strong>  ${objeto[i].text}</span>
             </li>
             `]
         }else if(objeto[i].type === 'message' && objeto[i].to !== 'Todos'){
             ListaMensagens = ListaMensagens + [`
-            <li class="mensagem conversa">
+            <li class="mensagem conversa" data-test="message">
             <span><span class="hora">(${objeto[i].time})</span> <strong>${objeto[i].from}</strong> para <strong>${objeto[i].to}:</strong>  ${objeto[i].text}</span>
             </li>
             `]
         }else if(objeto[i].type === 'private_message' && (objeto[i].to === ListaNome.name || objeto[i].from === ListaNome.name)){
             ListaMensagens = ListaMensagens + [`
-            <li class="mensagem privada">
+            <li class="mensagem privada" data-test="message">
             <span><span class="hora">(${objeto[i].time})</span><strong>${objeto[i].from}</strong> reservadamente para <strong>${objeto[i].to}:</strong>  ${objeto[i].text}</span>
             </li>
             `]
