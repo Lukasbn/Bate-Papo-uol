@@ -113,14 +113,16 @@ function JogaNaTela(){
 
 function Enviar(){
     const texto = document.querySelector("input").value;
-    mensagem = {
-        from: `${ListaNome.name}`,
-        to: "Todos",
-        text: `${texto}`,
-        type: "message"
-    };
-    document.querySelector("input").value = "";
-    MandarMensagem();
+    if(texto !== ""){
+        mensagem = {
+            from: `${ListaNome.name}`,
+            to: "Todos",
+            text: `${texto}`,
+            type: "message"
+        };
+        document.querySelector("input").value = "";
+        MandarMensagem();
+    }
 }
 
 function MandarMensagem(){
@@ -132,3 +134,11 @@ function MandarMensagem(){
 function ErroMandar(resposta){
     ErroContando()
 }
+
+document.addEventListener("keypress",function(e){
+
+    if(e.key === "Enter"){
+        const btn = document.querySelector("#BtnEnv");
+        btn.click();
+    }
+})
